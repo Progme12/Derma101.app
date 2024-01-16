@@ -21,7 +21,6 @@
 <a href="login.html">Login</a>
 </div>
     </nav>
-    <!-- Content -->
     <div class="content">
       <p>
         ENHANCING <br> YOUR <br> BEAUTY
@@ -31,6 +30,18 @@
       </div>
     </div>
   </div>
+    
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the "BOOK NOW" button element
+      var bookNowButton = document.querySelector('.button');
+
+      // Add a click event listener to the button
+      bookNowButton.addEventListener('click', function () {
+        // Redirect to the "login.php" page
+        window.location.href = 'login.html';
+      });
+    });
 
   <!-- Ribbon Section -->
   <div class="ribbon">
@@ -119,10 +130,22 @@
               <p>
                 Dr. Melanie S. Anclote, MD is a Fellow of the Philippine Dermatological Society and International Fellow
                 of the American Academy of Dermatology. Doc Mel is a graduate of the University of Santo Tomas College
-                of Medicine and Surgery as Magna Cum Laude. She took her internship training program at UST Hospital
+                of Medicine and Surgery Magna Cum Laude. She took her internship training program at UST Hospital
                 after which she took the Physician Licensure Exam and landed on the top 8th among the passers.
               </p>
-              <!-- Add more paragraphs for the doctor details -->
+              <p>
+                She took her Residency training program in Dermatology at the Jose R. Reyes Memorial Medical Center and
+                served as Chief Resident. She passed the board certification issued by the Philippine Dermatological
+                Society and became a Fellow of the same organization and International Fellow of the American Academy of
+                Dermatology.
+              </p>
+              <p>
+                Doc Mel is continuously honing her skills and expanding her knowledge through various local and
+                International
+                conventions, continuing medical education, seminars, and workshops. She is committed to excelling in the
+                field
+                of Dermatology to serve the Antipolenos and Rizalenos better.
+              </p>
             </div>
           </div>
         </div>
@@ -137,7 +160,7 @@
         <h2>Trust only the experts, Trust DERMA 101</h2>
       </div>
       <div class="contact-info">
-        <p>MONDAY to SUNDAY 10am - 8pm</p>
+        <p>MONDAY to SUNDAY 10 am - 8 pm </p>
         <p>US AT 2nd Floor (Unit 201-203) 1 CIRQ Building, Sen. Lorenzo Sumulong Avenue, Brgy. San Roque, Antipolo City</p>
         <p>(In front of Unciano Hospital, Above Converge and Beside McDonalds)</p>
       </div>
