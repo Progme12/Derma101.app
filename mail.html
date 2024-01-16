@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Send Mail</title>
+    <!-- Include necessary PHPMailer JavaScript files -->
+    <script src="PHPMailer-master/src/Exception.js"></script>
+    <script src="PHPMailer-master/src/PHPMailer.js"></script>
+    <script src="PHPMailer-master/src/SMTP.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Contact Form</h1>
+        <form id="contactForm">
+            <label for="recipient">Recipient:</label>
+            <input type="text" id="recipient" name="recipient" required>
+            <br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br>
+            <button type="button" onclick="sendMail()">Send Email</button>
+        </form>
+    </div>
+
+    <script>
+        function sendMail() {
+            var recipient = document.getElementById('recipient').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+
+            var formData = new FormData();
+            formData.append('recipient', recipient);
+            formData.append('subject', subject);
+            formData.append('message', message);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'send_mail.php', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        alert('Email sent successfully!');
+                    } else {
+                        alert('Error sending email. Please try again.');
+                    }
+                }
+            };
+            xhr.send(formData);
+        }
+    </script>
+</body>
+
+</html>
